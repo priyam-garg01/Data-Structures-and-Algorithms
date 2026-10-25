@@ -1,0 +1,51 @@
+/*Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+
+ 
+
+Example 1:
+
+
+Input: p = [1,2,3], q = [1,2,3]
+Output: true
+Example 2:
+
+
+Input: p = [1,2], q = [1,null,2]
+Output: false
+Example 3:
+
+
+Input: p = [1,2,1], q = [1,1,2]
+Output: false*/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+
+    bool treeTrav(TreeNode* p, TreeNode* q){
+
+        if (p == NULL || q == NULL)
+            return (p == q);//if they are equal it returns true
+            
+        // Using preorder traversal
+
+
+return ((p->val == q->val)&&treeTrav(p->left, q->left)&&treeTrav(p->right, q->right));//Only if all three comes out to be true we declare it  same trees
+
+        
+    }
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        return treeTrav(p, q);
+    }
+};/*T.C. = O(N), S.C. = O(N), Similar to this preorder we can do post and inorder using shifting statements in the final return*/
