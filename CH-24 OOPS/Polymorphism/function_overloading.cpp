@@ -10,8 +10,6 @@ class Area{
     int calcArea(int l, int b){
         return l*b;
     }
-
-
 };
 
 int main(){
