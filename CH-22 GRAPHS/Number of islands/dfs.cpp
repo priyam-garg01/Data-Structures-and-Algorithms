@@ -37,3 +37,32 @@ public:
     }
 };/*T.C. = O(N*N) + O(N*N*) 4) {No of times the DFS call is made for each node taking worst case as every node has val 1},
  S.C. = O(N*N) + O(N*N){SKEWED PATTERN (Every node is connected)}*/
+ class Solution {
+public:
+
+    void dfsTrav(int i, int j, vector<vector<char>>& grid, int m, int n,    vector<vector<int>>& vis){
+        if(i < 0 || j < 0 || i >= m || j >= n || vis[i][j] || grid[i][j] != '1') return;
+        vis[i][j] = 1;
+
+        dfsTrav(i, j+1, grid, m, n, vis);
+        dfsTrav(i+1, j, grid, m, n, vis);
+        dfsTrav(i-1, j, grid, m, n, vis);
+        dfsTrav(i, j-1, grid, m, n, vis);
+    }
+    int numIslands(vector<vector<char>>& grid) {
+        int m = grid.size();
+        int n = grid[0].size();
+        
+        vector<vector<int>> vis(m, vector<int>(n, 0));//Here we take the visited vector same as the size of the matrix
+        int ct = 0;
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if(grid[i][j] == '1' && !vis[i][j]){
+                    dfsTrav(i, j, grid, m, n, vis);
+                    ct++;
+                }
+            }
+        }
+        return ct;
+    }
+};

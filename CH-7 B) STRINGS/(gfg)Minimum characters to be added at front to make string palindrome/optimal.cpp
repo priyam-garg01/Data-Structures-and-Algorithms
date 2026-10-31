@@ -1,3 +1,5 @@
+
+
 class Solution {
   public:
     int minChar(string &s) {

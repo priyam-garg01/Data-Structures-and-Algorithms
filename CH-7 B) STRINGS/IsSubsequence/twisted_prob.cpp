@@ -57,4 +57,7 @@ int main() {
     }
 
     return 0;
-}
+}/*mp[ch] contains a sorted list of indices where character ch appears in t.
+prev is the index of the previously matched character in t.
+upper_bound returns an iterator to the smallest index position of ch that occurs after prev.
+If no such index exists (returns mp[ch].end()), ch cannot be placed in sequential order, meaning s is not a subsequence.*/

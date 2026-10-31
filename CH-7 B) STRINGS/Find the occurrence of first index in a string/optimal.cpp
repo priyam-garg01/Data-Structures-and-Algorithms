@@ -33,9 +33,6 @@ public:
             if(haystack[first] == needle[second]){
                 first++;
                 second++; 
-                if(second == s){
-                    return first - second;
-                }
             }
             else{
                 if(second != 0){
@@ -43,6 +40,9 @@ public:
                 } 
                 else first++;
             }
+        }
+        if(second == s){
+            return first - second;
         }
         return -1;
     }//T.C. = O(N + M), S.C. = O(M) 
