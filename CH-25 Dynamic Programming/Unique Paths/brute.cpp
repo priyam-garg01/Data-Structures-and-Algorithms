@@ -50,5 +50,5 @@ public:
 
         return countPaths(m-1, n-1);
     }
-};/*T.C. = O(2^(M*N)), S.C. = O(M*N) + O(M-1 + N-1)
+};/*T.C. = O(2^(M+N)), S.C. = O(M-1 + N-1)
 */
