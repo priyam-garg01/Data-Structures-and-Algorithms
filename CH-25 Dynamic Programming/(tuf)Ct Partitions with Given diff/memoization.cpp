@@ -27,7 +27,7 @@ class Solution {
         //also s1 - s2 = D => sum - 2*s2 = D => s2 = (sum-D)/2
         //Hence we need to find subsets that have sum = s2;
         int target = (sum-diff)/2;
-        if((sum-diff)%2 != 0 || target < 0)return 0;
+        if((sum-diff) < 0 || (sum-diff)%2 != 0)return 0;
         vector<vector<int>> dp(n, vector<int>(target+1, -1));
         
         return ctPartition(n-1, target, arr, dp);

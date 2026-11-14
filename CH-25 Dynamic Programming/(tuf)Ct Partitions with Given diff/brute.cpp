@@ -58,7 +58,9 @@ class Solution {
         //also s1 - s2 = D => sum - 2*s2 = D => s2 = (sum-D)/2
         //Hence we need to find subsets that have sum = s2;
         int target = (sum-diff)/2;
-        if((sum-diff)%2 != 0 || target < 0)return 0;
+        if((sum-diff) < 0 || (sum-diff)%2 != 0)return 0;
+         //If sum-target is odd dividing it by 2 yields a fraction.No integer subset 
+         //can sum to a non-integer value, making the target unreachable.
         
         return ctPartition(n-1, target, arr);
     }
