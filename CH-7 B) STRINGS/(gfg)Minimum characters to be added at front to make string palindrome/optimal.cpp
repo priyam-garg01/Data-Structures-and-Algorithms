@@ -1,5 +1,19 @@
+/*Given a string s, the task is to find the minimum characters to be added at the front to make the string palindrome.
 
+Examples:
 
+Input: s = "abc"
+Output: 2
+Explanation: Add 'b' and 'c' at front of the above string to make it palindrome: "cbabc"
+Input: s = "aacecaaaa"
+Output: 2
+Explanation: Add 2 a's at front of the above string to make it palindrome: "aaaacecaaaa"
+Constraints:
+
+1 ≤ s.size() ≤ 106
+s consists only of lowercase English alphabets*/
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
     int minChar(string &s) {
